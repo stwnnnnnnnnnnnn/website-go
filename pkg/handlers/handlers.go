@@ -1,18 +1,20 @@
-package main
+package handlers
 
 import (
 	"net/http"
+
+	"github.com/stwnnnnnnnnnnnn/website-go/pkg/render"
 )
 
 // function untuk response dan request harus 2 parameter
 func Home(w http.ResponseWriter, r *http.Request) {
 	// fmt.Fprint(w, "this is the homepage")
-	renderTemplate(w, "home.page.html")
+	render.RenderTemplate(w, "home.page.tmpl")
 }
 
 // About is the about page handler
 func About(w http.ResponseWriter, r *http.Request) {
-	renderTemplate(w, "about.page.html")
+	render.RenderTemplate(w, "about.page.tmpl")
 	// sum := addValues(2, 2)
 	// _, _ = fmt.Fprintf(w, fmt.Sprintf("this is at the about page and 2 + 2 is %d", sum))
 }

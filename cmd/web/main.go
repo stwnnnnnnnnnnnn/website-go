@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"net/http"
+
+	"github.com/stwnnnnnnnnnnnn/website-go/pkg/handlers"
 )
 
 const portNumber = ":8000"
@@ -18,8 +20,8 @@ func main() {
 	// 	fmt.Println(fmt.Sprintf("number of bytes written : %d", n))
 	// })
 
-	http.HandleFunc("/", Home)
-	http.HandleFunc("/about", About)
+	http.HandleFunc("/", handlers.Home)
+	http.HandleFunc("/about", handlers.About)
 	// http.HandleFunc("/divide", Divide)
 
 	fmt.Printf("Starting application on port %s.", portNumber)
